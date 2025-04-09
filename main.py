@@ -12,13 +12,18 @@ def index():
     return "Wecome to the Claim Amount Prediction Model"
 
 @app.post("/predict")
-def make_Prediction(claim:Claim):
-    new_data=pd.DataFrame(data=dict(
+def make_Prediction(claim: Claim):
+    new = pd.DataFrame(data=dict(
         wind=[claim.wind],
         rain=[claim.rain],
         area=[claim.area]
     ))
-    model=joblib.load("svm_Linear.joblib")
+
+    model = joblib.load("svm_Linear.joblib")
+    prediction = model.predict(new)
+
+    return {"prediction": prediction[0]}
+
     
 
 
