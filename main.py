@@ -21,8 +21,8 @@ def make_Prediction(claim: Claim):
 
     model = joblib.load("svm_Linear.joblib")
     prediction = model.predict(new)
-
     return {"prediction": prediction[0]}
+print("done")
 
     
 
