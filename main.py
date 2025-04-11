@@ -9,7 +9,7 @@ app= FastAPI(
 )
 @app.get("/")
 def index():
-    return "Wecome to the Claim Amount Prediction Model"
+    return "Great !!Wecome to the Claim Amount Prediction Model"
 
 @app.post("/predict")
 def make_Prediction(claim: Claim):
