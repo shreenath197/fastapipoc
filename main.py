@@ -9,7 +9,7 @@ app= FastAPI(
 )
 @app.get("/")
 def index():
-    return "Great !!Wecome to the Claim Amount Prediction Model"
+    return "GreatWecome to the Claim Amount Prediction Model"
 
 @app.post("/predict")
 def make_Prediction(claim: Claim):
@@ -22,6 +22,8 @@ def make_Prediction(claim: Claim):
     model = joblib.load("svm_Linear.joblib")
     prediction = model.predict(new)
     return {"prediction": prediction[0]}
+import logging
+logging.basicConfig(level=logging.DEBUG)
 print("done")
 
     
